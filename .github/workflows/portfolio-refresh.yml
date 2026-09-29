@@ -1,0 +1,45 @@
+name: Refresh portfolio activity
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: portfolio-refresh
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Refresh safe public metadata
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/refresh-repository-activity.mjs
+      - name: Open or update review pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- src/data/repository-activity.generated.json src/data/portfolio-candidates.generated.json; then
+            echo "No safe portfolio metadata changed."
+            exit 0
+          fi
+          branch="automation/portfolio-refresh"
+          git config user.name "portfolio-refresh[bot]"
+          git config user.email "portfolio-refresh[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add src/data/repository-activity.generated.json src/data/portfolio-candidates.generated.json
+          git commit -m "chore: refresh public portfolio activity"
+          git push --force-with-lease origin "HEAD:$branch"
+          gh pr view "$branch" >/dev/null 2>&1 || gh pr create --base main --head "$branch" --title "Refresh public portfolio activity" --body "Review safe metadata changes and any unpublished repository candidates. Nothing is published until this pull request is approved and merged."

@@ -1,0 +1,10 @@
+{
+  "accounts": ["thvndx"],
+  "approved": [
+    { "projectSlug": "promostudio", "repository": "thvndx/promostudio", "publishLink": false },
+    { "projectSlug": "nomayini", "repository": "thvndx/Nomayini", "publishLink": false },
+    { "projectSlug": "rowb-atelier", "repository": "thvndx/rowb-atelier", "publishLink": false },
+    { "projectSlug": "dst-bresciani", "repository": "thvndx/dst-bresciani", "publishLink": false },
+    { "projectSlug": "your-favorite-run", "repository": "thvndx/yfr-2026", "publishLink": false }
+  ]
+}
