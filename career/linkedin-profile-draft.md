@@ -1,24 +1,28 @@
-# LinkedIn profile draft for review
+# LinkedIn profile — final copy
 
-This document is a proposal only. Review every section before any live profile change.
+Reference copy refined on 30 September 2026. The owner confirms the live profile was updated on 29 September 2026; these refinements have not been compared with or applied to that live profile. No further live update is required as part of this work. Employer names for the current and 2020–2023 roles remain the existing names on the profile; the portfolio uses sanitized labels.
 
 ## Headline
 
-Full-Stack Software Developer and Customer Success Lead | Building Secure Operations, AI and Analytics Products
+Full-Stack Software Developer | Customer Success Lead | TypeScript, React, Next.js | Operations, AI & Analytics
 
 ## About
 
-I build software from the point where customer needs, operational pressure and technical systems meet.
+I build software that makes customer and operational work easier to manage.
 
-My background is in technical support and customer-success leadership. That experience taught me how quickly fragmented tools, unclear data and repetitive processes affect both customers and the people supporting them. I now turn those problems into secure, production-ready products.
+My background is in technical support and customer-success leadership. Working close to customers taught me where fragmented tools, unclear data and repetitive processes get in the way. I now turn those problems into practical software, from defining the problem through deployment and ongoing support.
 
 In my current role, I lead two direct reports within a four-person support operation while defining and shipping internal tools for customer context, quality assurance, customer-experience analysis and performance reporting. These products are used across the full support team and by adjacent departments.
 
-Selected outcomes include reducing customer-context gathering from about 20 minutes to roughly 30 seconds per interaction, KPI report generation from about two hours to about one minute, QA selection and compilation from about two hours to about one minute, and CSAT investigation from about 30 minutes to about one minute.
+The tools I’ve built have reduced customer-context gathering from about 20 minutes to 30 seconds per interaction, recurring KPI report generation and QA selection/compilation from about two hours to about one minute, and CSAT investigation and calculation from about 30 minutes to about one minute. Human review remains part of consequential quality decisions.
 
-I work across product definition, TypeScript, React, Next.js, Node.js, PostgreSQL, API integrations, testing, deployment and operational verification. I use AI-assisted development transparently as part of the workflow, while retaining responsibility for architecture, product judgment, safety boundaries and the final result.
+I work with TypeScript, React, Next.js, Node.js, PostgreSQL and API integrations. I handle product definition, implementation, testing and release verification. AI-assisted development is part of my workflow; I remain responsible for the architecture, decisions and result.
 
 I am interested in full-stack developer, software developer and product engineer opportunities, as well as focused client work involving operational systems, analytics or customer-facing products.
+
+Based in Johannesburg and open to suitable remote and hybrid opportunities.
+
+Portfolio: https://conold-portfolio.vercel.app
 
 ## Current experience
 
@@ -31,7 +35,7 @@ January 2023 to present
 - Identify recurring operational problems and translate them into deployed internal products for customer context, quality, experience analysis and performance reporting.
 - Reduced customer research from approximately 20 minutes to 30 seconds per interaction by consolidating context across operational systems.
 - Reduced recurring KPI and QA report-generation workflows from approximately two hours to about one minute while preserving human review.
-- Drove adoption across all four support agents and additional adjacent departments.
+- Drove adoption across the full four-person support operation and adjacent departments.
 - Reduced recurring software costs through vendor negotiation and provider changes.
 - Own product definition, full-stack implementation, testing, deployment and post-release verification for the internal tools I build.
 
@@ -56,6 +60,14 @@ September 2015 to January 2017
 Helped customers choose, configure and troubleshoot technology by combining technical understanding with practical sales guidance.
 
 ## Featured projects
+
+Add the portfolio as the primary Featured link: https://conold-portfolio.vercel.app
+
+Title: Conold Chisinahama — Software & Product Portfolio
+
+Description: Selected software projects, case studies and résumé downloads covering customer operations, AI, analytics and commerce.
+
+Use these project summaries when highlighting individual work:
 
 - Support Quality Platform: AI-assisted conversation QA with explicit manual permissions, automated sampling controls and evidence-backed reporting.
 - Customer Operations Workbench: a safer, unified customer view that reduced research time from about 20 minutes to 30 seconds.
