@@ -8,6 +8,7 @@
 - Production URL confirmed live and correct by the owner: https://conold-portfolio.vercel.app.
 - Owner reports production appearance is satisfactory; no independent full browser audit is claimed.
 - Owner confirms LinkedIn was updated on 29 September 2026. LinkedIn is complete; the local reference copy in linkedin-profile-draft.md was refined today but has not been applied to or compared with the live profile.
+- Résumés refined for software and product engineering: engineering-led summaries, specific technical project descriptions, clickable portfolio/profile links and clearer typography. Final Word-exported PDFs visually inspected across all three pages; one-page concise and two-page master lengths, text extraction and links verified.
 
 ## Content review
 
