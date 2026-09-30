@@ -182,12 +182,12 @@ def add_footer(doc, label):
 def build_concise():
     doc = Document()
     configure_document(doc, compact=True)
-    add_header(doc, "Full-Stack Software Developer | Customer Success Lead")
+    add_header(doc, "Full-Stack Software Developer")
 
     add_section(doc, "Profile")
     p = doc.add_paragraph()
     p.paragraph_format.space_after = Pt(2)
-    set_font(p.add_run("Full-stack software developer building TypeScript applications, API integrations and analytics tools used by a four-person support operation and adjacent departments. Owns product definition, implementation, testing and deployment, drawing on customer-success leadership to solve operational problems."), 10)
+    set_font(p.add_run("Full-stack software developer with a customer-success background, turning customer and operational needs into deployed applications. Builds TypeScript products, API integrations and analytics tools used across a four-person support operation and adjacent departments. Owns delivery from problem definition through testing, deployment and release verification."), 10)
 
     add_section(doc, "Technical Skills")
     add_skills(doc, [
@@ -197,6 +197,7 @@ def build_concise():
 
     add_section(doc, "Experience")
     add_role(doc, "Customer Success Lead", "Connectivity and e-commerce business", "January 2023 - Present", "Remote / Johannesburg")
+    doc.add_paragraph("Role combines customer-success leadership with hands-on development of internal software.", style="Resume Meta")
     for text in [
         "Built and deployed full-stack tools for customer context, quality review and performance reporting, adopted across the full support team and adjacent departments.",
         "Integrated support, call and commerce data into a customer workspace, reducing context gathering from approximately 20 minutes to 30 seconds per interaction.",
@@ -234,10 +235,10 @@ def build_concise():
 def build_master():
     doc = Document()
     configure_document(doc, compact=False)
-    add_header(doc, "Full-Stack Software Developer | Customer Success Lead")
+    add_header(doc, "Full-Stack Software Developer")
 
     add_section(doc, "Professional Summary")
-    doc.add_paragraph("Full-stack software developer building operational applications, API integrations and analytics products with TypeScript, React, Node.js and PostgreSQL. Owns delivery from product definition through deployment and release verification. Combines hands-on engineering with customer-success leadership; internal tools are used across a four-person support operation and adjacent departments.")
+    doc.add_paragraph("Full-stack software developer with a customer-success background, translating firsthand customer and operational needs into software requirements and deployed products. Builds applications, API integrations and analytics with TypeScript, React, Node.js and PostgreSQL. Combines user understanding with ownership of architecture, testing, deployment and release verification; internal tools are used across a four-person support operation and adjacent departments.")
 
     add_section(doc, "Core Skills")
     add_skills(doc, [
@@ -249,6 +250,7 @@ def build_master():
 
     add_section(doc, "Professional Experience")
     add_role(doc, "Customer Success Lead", "Connectivity and e-commerce business", "January 2023 - Present", "Remote / Johannesburg")
+    doc.add_paragraph("Role combines customer-success leadership with hands-on development of internal software.", style="Resume Meta")
     for text in [
         "Built and deployed internal applications for customer context, quality review, experience analysis and performance reporting, adopted across the full support operation and adjacent departments.",
         "Integrated support, call and commerce data into a customer workspace, reducing context gathering from approximately 20 minutes to 30 seconds per interaction.",
