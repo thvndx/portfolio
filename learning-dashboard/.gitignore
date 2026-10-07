@@ -1,0 +1,10 @@
+dist/
+.vercel/
+node_modules/
+calendar/*.json
+calendar/*.ics
+calendar/*.md
+calendar/*.jpg
+calendar/*.png
+*backup*.json
+.env*

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#153f35">
+  <title>Learning desk · Conold</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23153f35'/%3E%3Cpath d='M9 8v16h15v-4H13V8' fill='%23d8edb2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <noscript>This dashboard needs JavaScript enabled to load your roadmap and save progress.</noscript>
+  <a class="skip-link" href="#content">Skip to dashboard</a>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#today"><span class="brand-mark">L<span>↗</span></span><span>Learning desk<small>CONOLD’S PERSONAL ROADMAP</small></span></a>
+      <nav aria-label="Dashboard views">
+        <a href="#today" data-view="today"><span aria-hidden="true">◉</span> Today</a>
+        <a href="#roadmap" data-view="roadmap"><span aria-hidden="true">≡</span> Roadmap</a>
+        <a href="#evidence" data-view="evidence"><span aria-hidden="true">◇</span> Evidence</a>
+        <a href="#settings" data-view="settings"><span aria-hidden="true">⊞</span> Budget & settings</a>
+      </nav>
+      <div class="sidebar-bottom"><span class="local-dot"></span> Browser & personal<p>Your progress stays in this browser.<br>Back it up to keep it safe.</p><a href="#settings">Manage your backup →</a></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar"><span>BUILD SKILLS. KEEP THE RECEIPTS.</span><span id="today-date"></span></header>
+      <div id="storage-alert" class="banner danger" role="alert" hidden></div>
+      <div id="notice" class="banner" role="status" hidden></div>
+      <main id="content" tabindex="-1"></main>
+      <footer>Five focused hours. One meaningful step at a time. <span>Africa/Johannesburg · No subscriptions</span></footer>
+    </div>
+  </div>
+</body>
+</html>

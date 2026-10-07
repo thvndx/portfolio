@@ -1,0 +1,7 @@
+calendar/
+tests/
+README.md
+start.cmd
+serve.mjs
+*.json.bak
+.env*
