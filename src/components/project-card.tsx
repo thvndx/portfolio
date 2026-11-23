@@ -3,12 +3,12 @@ import { ArrowRight } from "@/components/icons";
 import { ProjectVisual } from "@/components/project-visual";
 import type { Project } from "@/data/projects";
 
-export function ProjectCard({ project, index }: { project: Project; index: number }) {
+export function ProjectCard({ project }: { project: Project }) {
   const content = (
     <>
       <ProjectVisual type={project.visual} />
       <div className="project-card-body">
-        <div className="project-card-meta"><span>{String(index + 1).padStart(2, "0")}</span><span>{project.year}</span></div>
+        <div className="project-card-meta"><span>{project.year}</span></div>
         <p className="eyebrow">{project.eyebrow}</p>
         <h3>{project.title}</h3>
         <p>{project.summary}</p>

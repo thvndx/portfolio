@@ -1,20 +1,60 @@
 import type { ProjectVisual as ProjectVisualType } from "@/data/projects";
+import { hasWalkthrough, walkthroughs, type WalkthroughType } from "@/data/project-walkthroughs";
 
-export function ProjectVisual({ type, compact = false }: { type: ProjectVisualType; compact?: boolean }) {
-  return (
-    <div className={`project-visual visual-${type} ${compact ? "visual-compact" : ""}`} aria-hidden="true">
-      <div className="visual-top"><span /><span /><span /><b>{labelFor(type)}</b></div>
-      {type === "quality" && <div className="quality-ui"><div className="score-ring">92<span>quality</span></div><div className="metric-list"><i style={{ "--w": "88%" } as React.CSSProperties} /><i style={{ "--w": "72%" } as React.CSSProperties} /><i style={{ "--w": "94%" } as React.CSSProperties} /></div></div>}
-      {type === "workbench" && <div className="workbench-ui"><div className="identity-row"><span>CM</span><div><b>Customer match</b><small>Verified across 3 sources</small></div></div><div className="timeline"><i /><i /><i /></div><span className="mock-button">Next safe action</span></div>}
-      {type === "performance" && <div className="performance-ui"><div className="mini-metrics"><b>94%</b><b>01:42</b><b>128</b></div><div className="chart"><i /><i /><i /><i /><i /><i /><i /></div></div>}
-      {type === "campaign" && <div className="campaign-ui"><div className="brief-card"><small>Campaign brief</small><b>Launch week</b><span>4 approved posts</span></div><div className="post-stack"><i /><i /><i /></div></div>}
-      {type === "mobile" && <div className="mobile-ui"><div className="phone"><small>Today</small><b>A workable day</b><i /><i /><i /><span className="mock-button">Recalibrate</span></div></div>}
-      {!["quality", "workbench", "performance", "campaign", "mobile"].includes(type) && <div className="archive-ui"><div className="archive-orb" /><div><i /><i /><i /></div></div>}
-    </div>
-  );
+const archiveVisuals = {
+  experience: { title: "Customer feedback", rows: [["Product experience", "Setup instructions"], ["Support experience", "Helpful walkthrough"]], result: "Two scores, with evidence for each" },
+  returns: { title: "Returns by product", rows: [["Antenna kits", "Fit and compatibility"], ["Accessories", "Changed requirements"]], result: "Recurring reasons by category" },
+  marketplace: { title: "Find help nearby", rows: [["Browse providers", "Search by location"], ["Post a job", "Describe what you need"]], result: "Nomayini · Local services" },
+  storefront: { title: "ROWB Atelier", rows: [["The collection", "Editorial lookbook"], ["Product detail", "Fit and fabric"]], result: "Shopify theme prototype" },
+  flagship: { title: "DST Bresciani", rows: [["Explore tailoring", "Collections"], ["Shop the edit", "Premium menswear"]], result: "Shopify flagship concept" },
+  event: { title: "Your Favorite Run", rows: [["Find your event", "Public event page"], ["Manage places", "Organizer dashboard"]], result: "Registration and capacity" },
+} as const;
+
+function PreviewPanel({ heading, rows, result }: {
+  heading: string;
+  rows: readonly (readonly [string, string])[];
+  result: string;
+}) {
+  return <div className="preview-panel">
+    <strong className="preview-title">{heading}</strong>
+    <dl>{rows.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+    <span className="preview-result">{result}</span>
+  </div>;
 }
 
-function labelFor(type: ProjectVisualType) {
-  const labels: Record<ProjectVisualType, string> = { quality: "QA overview", workbench: "Customer view", performance: "Performance", campaign: "Campaign", mobile: "Daily plan", experience: "Experience", returns: "Returns", marketplace: "Marketplace", storefront: "Storefront", event: "Event" };
-  return labels[type];
+export function ProjectVisual({ type }: { type: ProjectVisualType }) {
+  const preview = hasWalkthrough(type)
+    ? walkthroughs[type].steps[0]
+    : archiveVisuals[type];
+
+  return <div className={`project-visual visual-${type}`} aria-hidden="true">
+    <div className="preview-window">
+      <div className="preview-toolbar"><span /><span /><span /><b>Illustrative preview</b></div>
+      <PreviewPanel heading={"heading" in preview ? preview.heading : preview.title} rows={preview.rows} result={preview.result} />
+    </div>
+  </div>;
+}
+
+export function ProjectWalkthrough({ type }: { type: WalkthroughType }) {
+  const walkthrough = walkthroughs[type];
+
+  return <section className={`shell workflow visual-${type}`} aria-labelledby="workflow-title">
+    <header className="workflow-heading">
+      <p className="eyebrow">Workflow walkthrough</p>
+      <h2 id="workflow-title">{walkthrough.title}</h2>
+      <p>{walkthrough.value}</p>
+    </header>
+    <figure>
+      <ol className="workflow-steps">
+        {walkthrough.steps.map((step) => <li key={step.title}>
+          <div className="workflow-screen">
+            <div className="preview-toolbar"><b>{step.screen}</b></div>
+            <PreviewPanel heading={step.heading} rows={step.rows} result={step.result} />
+          </div>
+          <div className="workflow-step-copy"><h3>{step.title}</h3><p>{step.description}</p></div>
+        </li>)}
+      </ol>
+      <figcaption>Illustrative reconstruction with fictional data.</figcaption>
+    </figure>
+  </section>;
 }
