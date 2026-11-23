@@ -13,7 +13,7 @@ export function WorkFilter({ projects }: { projects: Project[] }) {
         {(["All", ...projectCategories] as const).map((category) => <button type="button" key={category} className={filter === category ? "filter-active" : ""} onClick={() => setFilter(category)} aria-pressed={filter === category}>{category}</button>)}
       </div>
       <p className="result-count" aria-live="polite">Showing {visible.length} project{visible.length === 1 ? "" : "s"}</p>
-      <div className="work-grid">{visible.map((project, index) => <ProjectCard key={project.slug} project={project} index={index} />)}</div>
+      <div className="work-grid">{visible.map((project) => <ProjectCard key={project.slug} project={project} />)}</div>
     </>
   );
 }

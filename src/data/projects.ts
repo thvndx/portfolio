@@ -1,5 +1,5 @@
 export type ProjectCategory = "Operations" | "AI & data" | "Mobile" | "Commerce" | "Client work";
-export type ProjectVisual = "quality" | "workbench" | "performance" | "campaign" | "mobile" | "experience" | "returns" | "marketplace" | "storefront" | "event";
+export type ProjectVisual = "quality" | "workbench" | "performance" | "campaign" | "mobile" | "experience" | "returns" | "marketplace" | "storefront" | "flagship" | "event";
 
 export interface ProjectSection {
   title: string;
@@ -213,7 +213,7 @@ export const projects: Project[] = [
     stack: ["Shopify", "Liquid", "JavaScript", "CSS", "Theme Check"],
     outcomes: ["Established a documented theme architecture", "Built reusable design tokens and brand assets", "Improved responsive navigation without touching the live theme"],
     featured: false,
-    visual: "storefront",
+    visual: "flagship",
     disclosure: "public-personal"
   },
   {

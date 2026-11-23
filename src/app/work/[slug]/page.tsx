@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "@/components/icons";
-import { ProjectVisual } from "@/components/project-visual";
+import { ProjectWalkthrough } from "@/components/project-visual";
+import { hasWalkthrough } from "@/data/project-walkthroughs";
 import { featuredProjects, projectBySlug } from "@/data/projects";
 
 export function generateStaticParams() { return featuredProjects.map(({ slug }) => ({ slug })); }
@@ -23,9 +24,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   return <>
     <article className="case-study">
       <header className="case-hero shell"><Link className="back-link" href="/work">← All work</Link><p className="eyebrow">{project.eyebrow}</p><h1>{project.title}</h1><p className="case-summary">{project.summary}</p><div className="case-meta"><div><span>Role</span><b>{project.role}</b></div><div><span>Year</span><b>{project.year}</b></div><div><span>Status</span><b>{project.status}</b></div></div></header>
-      <div className="shell case-visual"><ProjectVisual type={project.visual} /></div>
+      {hasWalkthrough(project.visual) && <ProjectWalkthrough type={project.visual} />}
       <div className="shell case-content">
-        <aside><p className="eyebrow">Technology</p><div className="stack-list">{project.stack.map((item) => <span key={item}>{item}</span>)}</div><p className="disclosure-note">Professional details are sanitized. Visuals use fictional data.</p></aside>
+        <aside><p className="eyebrow">Technology</p><div className="stack-list">{project.stack.map((item) => <span key={item}>{item}</span>)}</div></aside>
         <div className="case-sections">{project.sections.map((section, index) => <section key={section.title}><span>{String(index + 1).padStart(2, "0")}</span><div><h2>{section.title}</h2><p>{section.body}</p></div></section>)}</div>
       </div>
       <section className="outcome-panel"><div className="shell"><p className="eyebrow">Selected outcomes</p><div className="outcome-grid">{project.outcomes.map((outcome) => <p key={outcome}>{outcome}</p>)}</div></div></section>
