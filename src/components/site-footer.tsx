@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div>
           <p className="eyebrow">Available for the right problems</p>
           <h2>Let’s build something useful.</h2>
-          <p className="footer-copy">I’m interested in product and full-stack roles, as well as focused client work where operations, data and customer experience meet.</p>
+          <p className="footer-copy">I’m open to opportunities in customer operations, e-commerce support, product and software, as well as focused client work.</p>
         </div>
         <div className="footer-actions">
           <a href="mailto:cthandoc@gmail.com"><Mail /> Email</a>
