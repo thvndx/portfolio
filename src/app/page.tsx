@@ -16,8 +16,8 @@ export default function Home() {
   return (
     <>
       <section className="hero shell">
-        <div className="hero-kicker"><span className="availability-dot" /> {profile.role} at Waveform · Johannesburg, South Africa</div>
-        <h1>Customer support that <em>earns trust.</em></h1>
+        <div className="hero-kicker"><span className="availability-dot" /> {profile.role} · Johannesburg, South Africa</div>
+        <h1>{profile.headline[0]} <em>{profile.headline[1]}</em></h1>
         <div className="hero-bottom">
           <p>{profile.description}</p>
           <div className="hero-actions"><Link className="button" href="/work">Explore my work <ArrowRight /></Link><a className="text-link" href="mailto:cthandoc@gmail.com">Start a conversation <ArrowUpRight /></a></div>
@@ -39,7 +39,7 @@ export default function Home() {
 
       <section className="section shell about-preview">
         <div className="portrait-frame"><Image src="/conold-thando-chisinahama.jpg" alt="Conold Thando Chisinahama" width={1000} height={1000} sizes="(max-width: 760px) 88vw, 38vw" /></div>
-        <div><p className="eyebrow">About me</p><h2>From customer feedback to better workflows.</h2><p className="lead">At Waveform, I lead support for customers across our website and Amazon, from pre-purchase advice through delivery and returns.</p><p>I coach the people doing the work and partner with other teams to fix recurring customer problems. When a workflow needs a better tool, I bring hands-on product and software experience.</p><Link className="button button-secondary" href="/about">More about my path <ArrowRight /></Link></div>
+        <div><p className="eyebrow">About me</p><h2>From customer feedback to better workflows.</h2><p className="lead">I lead support across the online store and Amazon, from pre-purchase advice through delivery and returns.</p><p>I coach the team and work with Product, Fulfillment and Operations to fix recurring customer problems. I also build tools for everyday work like looking up customer history and reviewing service quality.</p><Link className="button button-secondary" href="/about">More about my path <ArrowRight /></Link></div>
       </section>
     </>
   );
